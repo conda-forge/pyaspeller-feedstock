@@ -1,13 +1,13 @@
 {% set name = "pyaspeller" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyaspeller-{{ version }}.tar.gz
-  sha256: 41e4291ef68dfc4da9b6f1eab42deb699956a3a73c8c35f4ff5d55c104d18d42
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyaspeller-{{ version }}.tar.gz
+  sha256: d4c1856f1c8eb1de7c18ff07bdc692e235cf19c64e4e114624f7306c29df9f16
 
 build:
   entry_points:
@@ -18,11 +18,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<4.0
-    - poetry >=0.12
+    - python {{ python_min }}
+    - hatchling
+    - hatch-fancy-pypi-readme >=22.5.0
     - pip
   run:
-    - python >=3.7.0,<4.0.0
+    - python >={{ python_min }}
     - requests >=2.27.1,<3.0.0
 
 test:
@@ -33,6 +34,7 @@ test:
     - pyaspeller --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/oriontvv/pyaspeller
