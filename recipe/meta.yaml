@@ -24,7 +24,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - requests >=2.27.1,<3.0.0
+    - requests >=2.32.3
 
 test:
   imports:
