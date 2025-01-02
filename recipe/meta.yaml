@@ -1,5 +1,5 @@
 {% set name = "pyaspeller" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyaspeller-{{ version }}.tar.gz
-  sha256: d4c1856f1c8eb1de7c18ff07bdc692e235cf19c64e4e114624f7306c29df9f16
+  sha256: 0aed696ab1ca11ca9d1a3874c7c2061fd567be9a2f1eff7b8e772031837701c0
 
 build:
   entry_points:
